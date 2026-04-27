@@ -9,12 +9,11 @@ class SearchSortedArray{
         while(low<=high){
             mid=low+(high-low)/2;
             if(arr[mid]==target){
-                System.out.println("position"+mid);
+                System.out.println("found at"+mid);
                 return;
             }
+            //left half
             if(arr[low]<=arr[mid]){
-
-                
                 if(arr[low]<=target && target<arr[mid]){
                     high=mid-1;
                 }
@@ -23,13 +22,16 @@ class SearchSortedArray{
                 }
             }
             else{
-                if(arr[mid]<target && target<=arr[high]){
+                if(arr[mid]<target&& target<=arr[high]){
                     low=mid+1;
                 }
                 else{
                     high=mid-1;
                 }
             }
+
+            
+        }
+        
         }
     }
-}
